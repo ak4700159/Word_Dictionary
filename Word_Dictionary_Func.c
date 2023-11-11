@@ -3,18 +3,19 @@
 #include <stdio.h>
 #include <string.h>
 
+#define MAX_CHAR_SIZE 100
 
-void modify_File(const char* fname, char* modify_msg);
-void insert_File(const char* fname, char* insert_msg);
-void delete_File(const char* fname, char* delete_msg);
-
+void insert_File(const char* fname, TreeType* root);
 void init_Tree(TreeType* root, const char* fname){
-	root = (TreeType*)malloc(sizeof(TreeType));
+	root->data.word = (char*)malloc(MAX_CHAR_SIZE);
+	root->data.meaning = (char*)malloc(MAX_CHAR_SIZE);
 	strcpy(root->data.word, "hello...");
 	strcpy(root->data.meaning, "Hi...");
 	root->left = NULL;
 	root->right = NULL;
 }
+
+
 void insert_Tree(TreeType* n, char* word, char* meaning);
 void modify_word_Tree(TreeType* n, char* word);
 void delete_word_Tree(TreeType* n, char* word);

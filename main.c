@@ -7,7 +7,7 @@ int main(int argc, char* argv[]){
 		fprintf(stderr, "argc is %d\n", argc);
 		exit(1);
 	}
-	PlayProgramEngine();
+	Run("data.dat");
 	return 0;
 }
 
